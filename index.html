@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explora personajes del universo Dragon Ball mediante una API pública.">
+    <title>Dragon Ball Explorer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="#">
+            DRAGON BALL <span>EXPLORER</span>
+        </a>
+        <span class="api-status">
+            <span class="status-dot"></span>
+            API pública
+        </span>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <p class="eyebrow">BASE DE DATOS DE GUERREROS</p>
+
+            <h1>Conoce el universo <span>Dragon Ball</span></h1>
+
+            <p class="hero-description">
+                Busca personajes, descubre sus habilidades y consulta
+                los datos recibidos directamente desde la API.
+            </p>
+
+            <form id="searchForm" class="search-form">
+                <label for="characterName">Nombre del personaje</label>
+
+                <div class="search-controls">
+                    <input
+                        id="characterName"
+                        type="search"
+                        placeholder="Ej. Goku, Vegeta, Piccolo..."
+                        autocomplete="off"
+                    >
+                    <button type="submit" id="searchButton">
+                        Buscar personaje
+                    </button>
+                </div>
+
+                <button type="button" id="showAllButton" class="text-button">
+                    Mostrar todos los personajes
+                </button>
+            </form>
+        </section>
+
+        <section class="results-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">EXPLORACIÓN</p>
+                    <h2 id="resultsTitle">Personajes destacados</h2>
+                </div>
+
+                <span id="resultCount" class="result-count">
+                    Preparando consulta...
+                </span>
+            </div>
+
+            <div id="feedback" class="feedback" role="status" aria-live="polite">
+                Conectando con la API...
+            </div>
+
+            <div id="characterGrid" class="character-grid"></div>
+        </section>
+
+        <section class="data-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">RESPUESTA DEL SERVIDOR</p>
+                    <h2>Datos JSON</h2>
+                </div>
+
+                <button id="copyJsonButton" class="secondary-button" type="button">
+                    Copiar JSON
+                </button>
+            </div>
+
+            <p class="data-description">
+                Revisa los datos originales recibidos mediante fetch().
+            </p>
+
+            <pre id="jsonOutput" class="json-output">Esperando respuesta...</pre>
+        </section>
+
+        <section class="concept-section">
+            <p class="eyebrow">¿CÓMO FUNCIONA?</p>
+            <h2>Del servidor a la pantalla</h2>
+
+            <div class="concept-grid">
+                <article class="concept-card">
+                    <span>01</span>
+                    <h3>Petición HTTP</h3>
+                    <p>JavaScript utiliza fetch() para solicitar información a la API.</p>
+                </article>
+
+                <article class="concept-card">
+                    <span>02</span>
+                    <h3>Respuesta JSON</h3>
+                    <p>La respuesta se convierte en datos que el programa puede procesar.</p>
+                </article>
+
+                <article class="concept-card">
+                    <span>03</span>
+                    <h3>Renderizado</h3>
+                    <p>Los datos se presentan en tarjetas y en el visor JSON.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Dragon Ball Explorer · Proyecto académico de consumo de API</p>
+        <p>Datos proporcionados por Dragon Ball API.</p>
+    </footer>
+</body>
+</html>
